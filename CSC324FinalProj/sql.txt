@@ -1,0 +1,847 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.4
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Mar 08, 2019 at 02:51 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.0.33
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `kccshoppp`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE `category` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE latin1_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`id`, `name`) VALUES
+(10, 'Hot Coffee'),
+(11, 'Cold Coffee'),
+(12, 'Hot Tea'),
+(13, 'Cold Tea'),
+(14, 'Breakfast'),
+(15, 'Fruits'),
+(16, 'Snacks'),
+(17, 'Baked Goods');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer`
+--
+
+CREATE TABLE `customer` (
+  `id` int(11) NOT NULL,
+  `email` varchar(255) COLLATE latin1_bin NOT NULL,
+  `password` varchar(255) COLLATE latin1_bin NOT NULL,
+  `timestamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`id`, `email`, `password`, `timestamp`) VALUES
+(1, '', '$2y$10$ItGhFSeUozF6azFUr924Bukss.d7rss82cMeSdRBnDng0N4/99tiW', '2019-02-12 21:39:02'),
+(3, 'due@gmail.com', '$2y$10$vt1Zjigvhq/8JPehqznm...ISJVAVyOTQZvRFV18e9JG4a1ofKNrq', '2019-02-13 01:03:39'),
+(4, 'e@gmail.com', '$2y$10$idf9wqtqMc42ybuf2s584.q.uXo2m9.rA/1ylc8CDTGc3prB2l3ES', '2019-02-13 02:34:09'),
+(5, 'gg@gmail.com', '$2y$10$2hOL0w9msgILgfWL90RmROpPTPK./GquWIvgoYEuPfNvvgTg7cQci', '2019-02-13 05:14:27'),
+(6, 'val@gmail.com', '$2y$10$6O8XVZ5NgcjbRwZWVLZqFea5aLN31UNLtQh3WeIwmupp9Ce4XFnFO', '2019-02-13 06:40:00'),
+(7, 'ss@gmail.com', '$2y$10$XxVWbeZ27BWLX92qMYH2iuRWNHO9u3Lf3OC7/ZEkiZyj1H.sT6bUq', '2019-02-19 01:24:50'),
+(8, 'd@gmail.com', '$2y$10$uj8RJTmBkuIlH/PbPDlioOSLEE/730hXEvJgWOHzGapH301WrYgSG', '2019-02-19 04:59:46'),
+(9, 'k@gmail.com', '$2y$10$WIze1.Oa814S4prnhH5Nc.ZAs6cipVvTQwI/m4pIDUAvvEiuXJsl6', '2019-02-19 18:03:49'),
+(10, 'j@gmail.com', '$2y$10$1ax0RZ/McJuTMHU4luHK4.JgFEt3FG5uzKQ/snod2jFN3q6Ljqpfu', '2019-02-19 19:20:52'),
+(11, 'ggg@gmail.com', '$2y$10$cFN.0mxOQjFRKL6hsdphnOM8ZX4tmeF8FRMT0TpWap5wu23zTEdEC', '2019-02-20 00:14:05'),
+(12, 'rr@gmail.com', '$2y$10$lo3zsauWS03bNj5/hyiFH.U8f305pPM.ZmNT1z7fX3UoZhlPwaOC6', '2019-02-20 03:40:00'),
+(13, 'da@gmail.com', '$2y$10$LcgL7VzOm1.puDBRLXg5ieRLi/VuSurmZZzEvvhp/gDT1cdTT.38e', '2019-02-20 04:05:16'),
+(14, 'q@gmail.com', '$2y$10$jkgYnttpEgWJsGEabvy7Vuzjbxo.BYLsqNIsORyQb0s.F4uWPZP7S', '2019-02-20 04:07:47'),
+(15, 're@gmail.com', '$2y$10$wS3TwXXWSl6oKINVYDrF0.p8YegJ2tOvHX4Jno3cc.g/XHutxRdOq', '2019-02-21 23:46:30'),
+(16, 'dad@gmail.com', '$2y$10$Eqmcup12uPQbbOli1TyOaupcfzhR3mdZsBhJNn8Mq.ZMS95wGIKDm', '2019-02-21 23:49:59'),
+(17, 'dada@gmail.com', '$2y$10$D/LR1szK3hM8L98K.nAWJOCFx.xAaM6yNvLFHeyZyYL4jXDmNkJA6', '2019-02-21 23:51:12'),
+(18, 'fffa@gmail.com', '$2y$10$AT/YUysHkkO4Dp0tcpdFOeRFCc6NTZQZojFk3t.it1wKEdNiWVKue', '2019-02-25 14:37:35'),
+(19, 'janet@gmail.com', '$2y$10$ME4bTj6P7m0wTU76IUU5O.Ef16GzFa3PIIGTyVVdd7CHbst57xNym', '2019-02-27 01:47:38'),
+(20, 'jake@gmail.com', '$2y$10$8mF5IqGkB1QQO5SbzoewXu92I8L4V3SFfU8gAzSZg8JT.U/7Y/NLi', '2019-02-28 13:27:54');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customerinfo`
+--
+
+CREATE TABLE `customerinfo` (
+  `id` int(11) NOT NULL,
+  `uid` int(11) NOT NULL,
+  `fname` varchar(255) COLLATE latin1_bin NOT NULL,
+  `lname` varchar(255) COLLATE latin1_bin NOT NULL,
+  `Street` varchar(255) COLLATE latin1_bin NOT NULL,
+  `City` varchar(255) COLLATE latin1_bin NOT NULL,
+  `State` varchar(255) COLLATE latin1_bin NOT NULL,
+  `Zip` varchar(255) COLLATE latin1_bin NOT NULL,
+  `mobile` varchar(255) COLLATE latin1_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
+
+--
+-- Dumping data for table `customerinfo`
+--
+
+INSERT INTO `customerinfo` (`id`, `uid`, `fname`, `lname`, `Street`, `City`, `State`, `Zip`, `mobile`) VALUES
+(1, 1, 'A', 'Ramirez', 'asfa', 'Santa Ana', 'AR', '92704', '7148000699'),
+(2, 3, 'Salinas', 'Socorro', '', '', 'AX', '', '7142273451'),
+(3, 4, 'Test2', 'Miller', '', '', '', '', '8888888888'),
+(4, 5, 'Test', '', '', 'Test', 'Aland Islands', '', '3235170240'),
+(5, 6, '', '', '', '', '', '', ''),
+(6, 7, 'Test2ee', 'Ramirez', '', 'Santa Ana', '', '', '7148000699'),
+(7, 8, 'Testt', 'Testt', '', 'Los Angeles', 'CA', '', '5464654646'),
+(8, 9, 'K', 'D', '', 'Los Angeles', 'CA', '', '3234444444'),
+(9, 10, 'Test2', 'Ramirez', '', 'test2', 'Arizona', '', '5464654646'),
+(10, 11, 'Emily', 'Dorado', '', 'Los Angeles', 'CA', '', '3234545454'),
+(11, 12, 'Fara', 'Guly', '', 'Culver City', 'CA', '', '3105555555'),
+(12, 13, 'Daria', 'Lo', '', 'Los Angeles', 'CA', '', '3105578888'),
+(13, 14, 'Kelly', 'Rue', '', 'Los Angeles', 'CA', '', '3108888888'),
+(14, 0, 'Miller', 'Ramirez', '', 'Los Angeles', 'CA', '', '3235170240'),
+(15, 0, 'Miller', 'Ramirez', '', 'Los Angeles', 'Aland Islands', '', '3235170240'),
+(16, 0, 'Miller', 'Ramirez', '', 'Los Angeles', 'CA', '', '3235170240'),
+(17, 0, 'Miller', 'Ramirez', '', 'Los Angeles', 'CA', '', '3235170240'),
+(18, 15, 'Miller', 'Ramirez', '', 'Los Angeles', 'Aland Islands', '', '3235170240'),
+(19, 17, 'Miller', 'Ramirez', '11659 Success Avenue', 'Los Angeles', 'CA', '90059', '3235170240'),
+(20, 16, 'Miller', 'Ramirez', '', 'Los Angeles', 'Aland Islands', '', '3235170240'),
+(21, 18, 'A', 'Ramirez', '', 'Santa Ana', 'CA', '', '7148000699'),
+(22, 19, 'Janet', 'Jaimes', '', 'Santa Ana', 'CA', '', '7148800505'),
+(23, 20, 'Jake', 'Doe', '', 'Bakersfield', 'CA', '', '6246066666');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employee`
+--
+
+CREATE TABLE `employee` (
+  `id` int(11) NOT NULL,
+  `fname` varchar(255) COLLATE latin1_bin NOT NULL,
+  `lname` varchar(255) COLLATE latin1_bin NOT NULL,
+  `email` varchar(255) COLLATE latin1_bin NOT NULL,
+  `password` varchar(255) COLLATE latin1_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
+
+--
+-- Dumping data for table `employee`
+--
+
+INSERT INTO `employee` (`id`, `fname`, `lname`, `email`, `password`) VALUES
+(2, 'Jessica', 'Hernandez', 'jhernandez@gmail.com', 'e10adc3949ba59abbe56e057f20f883e'),
+(3, 'Martha', 'Stewart', 'mstewart@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055'),
+(4, 'Karen', 'Salinas', 'karen.s126352@gmail.com', 'dba685f0addebe84759918ae1548c8a9'),
+(5, 'Carol', 'Kimble', 'ckimble@gmail.com', 'e10adc3949ba59abbe56e057f20f883e'),
+(6, 'Jimmy', 'Page', 'jpage@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055'),
+(7, 'Snoop', 'Dogg', 'snoopdogg@gmail.com', '122222'),
+(8, 'Jimmy', 'Hendrix', 'jhendrix@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055'),
+(9, 'Marshell', 'Mathers', 'mmathers@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055'),
+(10, 'Michael', 'Jackson', 'mjackson@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055'),
+(11, 'Kalista', 'Dermes', 'kdermes@gmail.com', 'Ks126352');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `emp_role`
+--
+
+CREATE TABLE `emp_role` (
+  `id` int(11) NOT NULL,
+  `role` varchar(255) COLLATE latin1_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
+
+--
+-- Dumping data for table `emp_role`
+--
+
+INSERT INTO `emp_role` (`id`, `role`) VALUES
+(1, 'Barista'),
+(2, 'Cashier'),
+(3, 'Manager');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `is_a`
+--
+
+CREATE TABLE `is_a` (
+  `eid` int(11) NOT NULL,
+  `rid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
+
+--
+-- Dumping data for table `is_a`
+--
+
+INSERT INTO `is_a` (`eid`, `rid`) VALUES
+(1, 2),
+(1, 2),
+(2, 3),
+(4, 2),
+(8, 2),
+(9, 1),
+(10, 1),
+(3, 1),
+(5, 2),
+(6, 1),
+(7, 2),
+(11, 2),
+(12, 1),
+(12, 2),
+(12, 2),
+(1, 11);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contains`
+--
+
+CREATE TABLE `contains` (
+  `id` int(11) NOT NULL,
+  `pid` int(11) NOT NULL,
+  `pqty` varchar(255) COLLATE latin1_bin NOT NULL,
+  `orderid` int(11) NOT NULL,
+  `producthprice` decimal(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
+
+--
+-- Dumping data for table `contains`
+--
+
+INSERT INTO `contains` (`id`, `pid`, `pqty`, `orderid`, `producthprice`) VALUES
+(1, 1, '1', 1, '3.00'),
+(2, 15, '1', 1, '2.50'),
+(3, 16, '1', 4, '3.00'),
+(4, 1, '1', 4, '3.00'),
+(5, 16, '1', 5, '3.00'),
+(6, 15, '1', 5, '2.50'),
+(7, 1, '1', 5, '3.00'),
+(8, 1, '1', 6, '3.00'),
+(9, 15, '1', 6, '2.50'),
+(10, 16, '', 7, '0.00'),
+(11, 1, '', 8, '0.00'),
+(12, 1, '', 11, '0.00'),
+(13, 15, '', 11, '0.00'),
+(14, 16, '', 11, '0.00'),
+(15, 1, '', 12, '0.00'),
+(16, 15, '', 12, '0.00'),
+(17, 1, '1', 16, '3.00'),
+(18, 15, '1', 17, '2.50'),
+(19, 16, '1', 17, '3.00'),
+(20, 17, '1', 17, '2.50'),
+(21, 1, '1', 18, '3.00'),
+(22, 15, '3', 18, '2.50'),
+(23, 16, '2', 18, '3.00'),
+(24, 15, '1', 19, '2.50'),
+(25, 15, '1', 20, '2.50'),
+(26, 1, '1', 20, '3.00'),
+(27, 16, '1', 20, '3.00'),
+(28, 17, '1', 20, '2.50'),
+(29, 15, '1', 21, '2.50'),
+(30, 16, '1', 21, '3.00'),
+(31, 17, '3', 21, '2.50'),
+(32, 15, '1', 22, '2.50'),
+(33, 16, '1', 22, '3.00'),
+(34, 15, '1', 23, '2.50'),
+(35, 15, '1', 24, '0.00'),
+(36, 1, '1', 25, '0.00'),
+(37, 16, '1', 26, '3.00'),
+(38, 15, '2', 27, '0.00'),
+(39, 16, '1', 28, '3.00'),
+(40, 19, '1', 29, '2.50'),
+(41, 19, '1', 30, '2.50'),
+(42, 18, '1', 31, '0.00'),
+(43, 18, '1', 32, '3.50'),
+(44, 18, '1', 33, '3.50'),
+(45, 27, '1', 33, '4.00'),
+(46, 18, '1', 34, '3.50'),
+(47, 18, '1', 35, '3.50'),
+(48, 21, '1', 36, '3.50'),
+(49, 18, '1', 37, '3.50'),
+(50, 18, '1', 38, '3.50'),
+(51, 45, '2', 39, '3.00'),
+(52, 18, '1', 40, '3.50'),
+(53, 18, '1', 41, '3.50'),
+(54, 19, '1', 42, '0.00'),
+(55, 18, '1', 42, '0.00'),
+(56, 18, '1', 43, '3.50'),
+(57, 19, '3', 44, '2.50'),
+(58, 19, '1', 45, '2.50'),
+(59, 20, '2', 46, '0.00'),
+(60, 19, '1', 47, '2.50'),
+(61, 18, '1', 48, '3.50'),
+(62, 18, '1', 49, '3.50'),
+(63, 24, '1', 49, '4.00'),
+(64, 22, '1', 49, '3.00'),
+(65, 41, '1', 49, '6.50'),
+(66, 38, '1', 49, '3.00'),
+(67, 19, '1', 50, '2.50'),
+(68, 18, '1', 51, '3.50'),
+(69, 21, '1', 52, '3.50'),
+(70, 20, '1', 52, '4.00'),
+(71, 19, '1', 53, '2.50'),
+(72, 22, '1', 53, '3.00'),
+(73, 27, '1', 53, '4.00'),
+(74, 36, '1', 53, '3.00'),
+(75, 51, '1', 53, '0.50'),
+(76, 53, '1', 53, '0.60'),
+(77, 20, '1', 54, '4.00'),
+(78, 18, '1', 55, '3.50'),
+(79, 46, '1', 56, '3.00'),
+(80, 47, '1', 56, '3.00'),
+(81, 22, '1', 57, '3.00'),
+(82, 24, '6', 57, '4.00'),
+(83, 18, '1', 58, '0.00'),
+(84, 21, '1', 58, '0.00'),
+(85, 24, '1', 59, '4.00'),
+(86, 35, '1', 59, '2.50'),
+(87, 18, '1', 60, '0.00'),
+(88, 21, '1', 61, '3.50'),
+(89, 22, '1', 61, '3.00'),
+(90, 42, '1', 61, '4.50'),
+(91, 50, '1', 61, '0.60'),
+(92, 46, '1', 61, '3.00'),
+(93, 24, '5', 62, '0.00'),
+(94, 18, '1', 63, '0.00'),
+(95, 21, '1', 64, '3.50'),
+(96, 37, '1', 64, '3.00'),
+(97, 46, '1', 65, '3.00'),
+(98, 51, '1', 65, '0.50'),
+(99, 30, '5', 65, '4.00'),
+(100, 18, '1', 66, '4.00'),
+(101, 18, '1', 67, '4.00'),
+(102, 33, '1', 67, '2.50'),
+(103, 18, '1', 68, '4.00'),
+(104, 51, '1', 68, '0.50'),
+(105, 18, '1', 69, '4.00'),
+(106, 18, '1', 70, '4.00'),
+(107, 0, '1', 71, '0.00'),
+(108, 18, '1', 71, '0.00'),
+(109, 18, '1', 72, '0.00'),
+(110, 18, '1', 73, '0.00'),
+(111, 18, '1', 74, '4.00'),
+(112, 18, '1', 75, '4.00'),
+(113, 18, '1', 77, '4.00'),
+(114, 21, '1', 78, '3.50'),
+(115, 19, '1', 78, '2.50'),
+(116, 20, '1', 78, '4.00'),
+(117, 24, '1', 79, '4.00'),
+(118, 36, '1', 79, '3.00'),
+(119, 53, '1', 79, '0.60'),
+(120, 18, '1', 80, '4.00'),
+(121, 22, '1', 80, '3.00'),
+(122, 18, '1', 81, '4.00'),
+(123, 46, '5', 82, '3.00'),
+(124, 41, '1', 83, '6.50'),
+(125, 51, '1', 83, '0.50'),
+(126, 50, '1', 83, '0.60'),
+(127, 38, '1', 84, '3.00'),
+(128, 24, '1', 84, '4.00'),
+(129, 29, '1', 85, '4.50'),
+(130, 33, '1', 85, '2.50'),
+(131, 38, '1', 85, '3.00'),
+(132, 32, '1', 86, '2.50'),
+(133, 18, '1', 87, '4.00'),
+(134, 24, '1', 87, '4.00'),
+(135, 18, '1', 88, '4.00'),
+(136, 21, '1', 89, '3.50'),
+(137, 19, '1', 89, '2.50'),
+(138, 18, '1', 90, '4.00'),
+(139, 45, '5', 90, '3.00'),
+(140, 18, '1', 91, '5.00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `uid` int(11) NOT NULL,
+  `totalprice` decimal(10,2) NOT NULL,
+  `orderstatus` varchar(255) COLLATE latin1_bin NOT NULL,
+  `paymentmode` varchar(255) COLLATE latin1_bin NOT NULL,
+  `timestamp` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `uid`, `totalprice`, `orderstatus`, `paymentmode`, `timestamp`) VALUES
+(1, 1, '6.00', 'Cancelled', 'cod', '2019-02-12 21:39:17'),
+(2, 1, '0.00', 'Order Placed', 'cod', '2019-02-12 22:32:14'),
+(3, 1, '0.00', 'Order Placed', 'cod', '2019-02-13 00:24:34'),
+(4, 3, '6.00', 'Dispatched', 'cod', '2019-02-13 01:03:57'),
+(5, 3, '9.00', 'Order Placed', 'cod', '2019-02-13 01:10:57'),
+(6, 4, '6.00', 'Cancelled', 'cod', '2019-02-13 02:34:25'),
+(7, 4, '0.00', 'Cancelled', 'cod', '2019-02-13 02:53:02'),
+(8, 4, '0.00', 'Order Placed', '', '2019-02-13 03:00:44'),
+(9, 4, '0.00', 'Order Placed', 'on', '2019-02-13 03:01:41'),
+(10, 4, '0.00', 'Order Placed', 'on', '2019-02-13 03:01:50'),
+(11, 4, '0.00', 'Cancelled', 'cod', '2019-02-13 03:24:30'),
+(12, 4, '0.00', 'Order Placed', 'cod', '2019-02-13 03:44:33'),
+(13, 4, '3.00', 'Order Placed', 'cod', '2019-02-13 03:50:49'),
+(14, 4, '3.00', 'Order Placed', 'cod', '2019-02-13 03:51:33'),
+(15, 4, '3.00', 'Dispatched', 'cod', '2019-02-13 03:53:39'),
+(16, 4, '3.00', 'Cancelled', 'cod', '2019-02-13 03:55:16'),
+(17, 4, '8.00', 'Dispatched', 'cod', '2019-02-13 03:56:38'),
+(18, 4, '17.00', 'In Progress', 'cod', '2019-02-13 03:57:16'),
+(19, 4, '3.00', 'Order Placed', '', '2019-02-13 04:15:14'),
+(20, 4, '11.00', 'Order Placed', 'cod', '2019-02-13 04:27:46'),
+(21, 4, '13.00', 'Order Placed', 'cod', '2019-02-13 04:30:08'),
+(22, 4, '6.00', 'Cancelled', 'cod', '2019-02-13 04:36:46'),
+(23, 4, '3.00', 'Order Placed', 'cod', '2019-02-13 04:54:36'),
+(24, 5, '0.00', 'Order Placed', 'cod', '2019-02-13 05:14:42'),
+(25, 6, '0.00', 'Order Placed', 'cod', '2019-02-13 06:40:07'),
+(26, 6, '3.00', 'Order Placed', 'cod', '2019-02-13 06:40:26'),
+(27, 7, '0.00', 'In Progress', 'cod', '2019-02-19 01:25:11'),
+(28, 7, '3.00', 'Dispatched', 'cod', '2019-02-19 01:27:38'),
+(29, 7, '3.00', 'Order Placed', 'cod', '2019-02-19 02:04:11'),
+(30, 7, '3.00', 'Cancelled', 'cod', '2019-02-19 02:54:01'),
+(31, 8, '0.00', 'Order Placed', 'cod', '2019-02-19 04:59:55'),
+(32, 8, '4.00', 'Order Placed', 'cod', '2019-02-19 05:02:21'),
+(33, 8, '8.00', 'Order Placed', 'cod', '2019-02-19 05:02:46'),
+(34, 8, '4.00', 'Order Placed', 'cod', '2019-02-19 05:03:57'),
+(35, 8, '4.00', 'Order Placed', 'Cash', '2019-02-19 05:05:41'),
+(36, 8, '4.00', 'Order Placed', 'on', '2019-02-19 05:06:29'),
+(37, 8, '4.00', 'Order Placed', 'on', '2019-02-19 05:08:28'),
+(38, 8, '4.00', 'Cancelled', 'Credit', '2019-02-19 05:09:41'),
+(39, 8, '6.00', 'Cancelled', 'Cash', '2019-02-19 06:22:40'),
+(40, 8, '4.00', 'Almost Done', 'Credit', '2019-02-19 06:26:12'),
+(41, 8, '4.00', 'Preparing', 'Cash', '2019-02-19 06:28:14'),
+(42, 9, '0.00', 'Cancelled', 'Cash', '2019-02-19 18:04:26'),
+(43, 9, '4.00', 'Order Placed', 'Cash', '2019-02-19 18:04:52'),
+(44, 9, '8.00', 'Cancelled', 'Credit', '2019-02-19 18:05:32'),
+(45, 9, '3.00', 'Preparing', 'Cash', '2019-02-19 18:22:16'),
+(46, 10, '0.00', 'Order Placed', 'Credit', '2019-02-19 19:21:41'),
+(47, 10, '3.00', 'Cancelled', 'Credit', '2019-02-19 19:22:02'),
+(48, 10, '4.00', 'Done', 'Cash', '2019-02-19 19:24:01'),
+(49, 8, '20.00', 'Order Placed', 'Cash', '2019-02-19 20:16:59'),
+(50, 8, '3.00', 'Order Placed', 'Cash', '2019-02-19 20:18:39'),
+(51, 8, '4.00', 'Done', 'Cash', '2019-02-19 20:19:07'),
+(52, 8, '7.50', 'Done', 'Cash', '2019-02-19 20:31:31'),
+(53, 8, '13.60', 'Done', 'Cash', '2019-02-19 20:32:25'),
+(54, 8, '4.00', 'Done', 'Cash', '2019-02-19 20:42:29'),
+(55, 8, '3.50', 'Done', 'Cash', '2019-02-19 21:26:44'),
+(56, 8, '6.00', 'Ready-to-Go', 'Credit', '2019-02-19 21:27:05'),
+(57, 8, '27.00', 'Ready-to-Go', 'Cash', '2019-02-19 21:29:48'),
+(58, 11, '0.00', 'Done', 'Cash', '2019-02-20 00:14:45'),
+(59, 11, '6.50', 'Ready-to-Go', 'Cash', '2019-02-20 00:15:29'),
+(60, 12, '0.00', 'Cancelled', 'Cash', '2019-02-20 03:40:43'),
+(61, 12, '14.60', 'Done', 'Credit', '2019-02-20 03:42:26'),
+(62, 13, '0.00', 'Ready-to-Go', 'Credit', '2019-02-20 04:05:47'),
+(63, 14, '0.00', 'Ready-to-Go', 'Cash', '2019-02-20 04:08:30'),
+(64, 14, '6.50', 'Done', 'Cash', '2019-02-20 04:09:13'),
+(65, 14, '23.50', 'Ready-to-Go', 'Cash', '2019-02-20 04:11:58'),
+(66, 8, '4.00', 'Order Placed', 'Cash', '2019-02-20 09:49:56'),
+(67, 8, '6.50', 'Order Placed', 'Cash', '2019-02-20 15:50:33'),
+(68, 8, '4.50', 'Order Placed', 'Cash', '2019-02-20 18:59:34'),
+(69, 8, '4.00', 'Order Placed', 'Cash', '2019-02-21 21:24:12'),
+(70, 8, '4.00', 'Preparing', 'Cash', '2019-02-21 21:39:24'),
+(71, 0, '0.00', 'Done', 'Cash', '2019-02-21 23:17:36'),
+(72, 0, '0.00', 'Done', 'Cash', '2019-02-21 23:21:20'),
+(73, 0, '0.00', 'Done', 'Cash', '2019-02-21 23:22:14'),
+(74, 0, '4.00', 'Done', 'Cash', '2019-02-21 23:41:04'),
+(75, 15, '4.00', 'In Progress', 'Cash', '2019-02-21 23:46:37'),
+(76, 15, '0.00', 'Cancelled', 'Cash', '2019-02-21 23:48:09'),
+(77, 15, '4.00', 'Order Placed', 'Cash', '2019-02-21 23:48:24'),
+(78, 15, '10.00', 'Order Placed', 'Cash', '2019-02-21 23:48:53'),
+(79, 17, '7.60', 'Order Placed', 'Cash', '2019-02-21 23:51:19'),
+(80, 16, '7.00', 'Order Placed', 'Cash', '2019-02-21 23:52:10'),
+(81, 18, '4.00', 'Order Placed', 'Cash', '2019-02-25 14:37:44'),
+(82, 19, '15.00', 'Order Placed', 'Cash', '2019-02-27 01:48:14'),
+(83, 19, '7.60', 'In Progress', 'Cash', '2019-02-27 01:58:58'),
+(84, 19, '7.00', 'In Progress', 'Cash', '2019-02-27 01:59:29'),
+(85, 19, '10.00', 'Preparing', 'Cash', '2019-02-27 02:00:08'),
+(86, 19, '2.50', 'Cancelled', 'Cash', '2019-02-27 02:01:33'),
+(87, 19, '8.00', 'Cancelled', 'Cash', '2019-02-27 02:02:17'),
+(88, 19, '4.00', 'Cancelled', 'Cash', '2019-02-27 02:02:50'),
+(89, 19, '6.00', 'Cancelled', 'Cash', '2019-02-27 02:03:18'),
+(90, 20, '19.00', 'In Progress', 'Cash', '2019-02-28 13:29:01'),
+(91, 20, '5.00', 'Order Placed', 'Cash', '2019-02-28 18:10:15');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE latin1_bin NOT NULL,
+  `catid` int(11) NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `thumb` varchar(255) COLLATE latin1_bin NOT NULL,
+  `description` varchar(255) COLLATE latin1_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `catid`, `price`, `thumb`, `description`) VALUES
+(18, 'Cafe Latte', 10, '5.00', 'imgs/calatte.jpg', 'An espresso-based drink, of Italian origin, with 1/3 espresso, 1/3 steamed milk, and 1/3 wet foamed milk.'),
+(19, 'Black Coffee', 10, '2.50', 'imgs/bcoffee.jpg', 'Brewed coffee without any added flavors, cream, or sugar. '),
+(20, 'Cafe Mocha', 10, '4.00', 'imgs/cafeemocha.jpg', 'One third espresso and two thirds steamed milk, but a portion of chocolate is added, typically in the form of sweet cocoa powder, although many varieties use chocolate syrup. Mochas can contain dark or milk chocolate.'),
+(21, 'Cafe Americano', 10, '3.50', 'imgs/cafeamericano.jpg', 'A type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from traditionally brewed coffee. The strength of an Americano varies with the number of shots of espresso and the amount of wate'),
+(22, 'Macchiato', 10, '3.00', 'imgs/macchiatoll2.jpg', 'An espresso (served in a demitasse cup) with a small amount of foamed milk on top.'),
+(23, 'Cappuccino', 10, '4.00', 'imgs/cpuccino2.jpg', 'A coffee-based drink made primarily from espresso and milk. It consists of one-third espresso, one-third heated milk and one-third milk foam and is generally served in a 6 to 8-ounce cup. The cappuccino is considered one of the original espresso drinks re'),
+(24, 'Iced Mocha', 11, '4.00', 'imgs/icedmocha.jpg', 'Combines chilled premium Espresso with chocolate milk and chocolaty syrup finished with whipped topping and chocolate drizzle.'),
+(27, 'Iced Latte', 11, '4.00', 'imgs/icedlattte.jpg', 'Made with milk blended with our rich, freshly ground and brewed espresso, our Iced Latte has the perfect balance of cool and creamy to get you goin\'.'),
+(28, 'Iced Americano', 11, '4.50', 'imgs/icedamericano.jpg', 'The iced americano is made by combining espresso with cold water instead of hot water. A lungo is made by extracting an espresso shot for longer giving more volume, but also extracting some bitter flavours. '),
+(29, 'Iced Cappuccino ', 11, '4.50', 'imgs/icedcapppp.jpg', 'With less milk than a latte, Iced Cappuccino offers a stronger espresso flavor, a luxurious texture and a velvety, frothy foam with a crisp, cool undercurrent.'),
+(30, 'Iced Caramel Macchiato', 11, '4.00', 'imgs/icecaramelmacchiato.jpg', 'Cool, creamy caramel. Iced Caramel Macchiato. Iced Caramel Macchiato made with our rich, dark-roast espresso served with iced whole or nonfat milk, mixed with sweet caramel syrup, and topped with buttery caramel drizzle.'),
+(31, 'Cold Espresso', 11, '3.00', 'imgs/espresso.jpg', 'A full-flavored, concentrated form of coffee that is served in “shots.” It is made by forcing pressurized, hot water through very finely ground coffee beans.'),
+(32, 'Black Tea', 12, '2.50', 'imgs/blacktea.jpg', 'Black tea is a type of tea that is more oxidized than oolong, green, and white teas. Black tea is generally stronger in flavour than the less oxidized teas.'),
+(33, 'Jasmine Tea', 12, '2.50', 'imgs/make-jasmine-tea.jpg', 'Jasmine tea is tea scented with aroma from jasmine blossoms to make a scented tea. Typically, jasmine tea has green tea as the tea base; however, white tea and black tea are also used. The resulting flavour of jasmine tea is subtly sweet and highly fragra'),
+(34, 'White Tea', 12, '3.00', 'imgs/White_tea.jpg', 'Minimally processed and is second only to green tea. It is made from the unopened buds and occasionally the first shoot of the plant. Usually, it’s made from the first flush tea when a tea plant is at its prime growth state.'),
+(35, 'Green Tea', 12, '2.50', 'imgs/greentea.jpg', 'Green tea is a type of tea that is made from Camellia sinensis leaves and buds that have not undergone the same withering and oxidation process used to make oolong teas and black teas. Green tea originated in China, but its production and manufacture has '),
+(36, 'Lemon Tea', 12, '3.00', 'imgs/lemontea.jpg', 'Nothing but a form of black tea or green tea liquor to which lemon juice has been added to impart a unique flavour. Lemon tea simply contains hot tea with lemon juice and sugar'),
+(37, 'Black Cherry Tea', 12, '3.00', 'imgs/cherrytea.jpg', 'Reminiscent of nostalgic fruit punch, this tea combines a burst of cherry and berry flavors with tart, ruby-red hibiscus and other herbs. Delicious iced.'),
+(38, 'Earl Iced Tea', 13, '3.00', 'imgs/EarlGreyFSIT.jpg', 'A tea blend which has been flavoured with the addition of oil of bergamot. Bergamot is a variety of orange that is often grown in Italy and France. The rind\'s fragrant oil is added to black tea to give Earl Grey its unique taste.'),
+(39, 'Passion Tea', 13, '3.00', 'imgs/PassionTea4.jpg', 'Blended with an artistry that borders on magical, Passion is an Herbal Infusion, made of hibiscus flowers, orange peel, rosehips, cinnamon, lemongrass, natural tropical flavors, citric acid, licorice and red poppy.'),
+(40, 'Thai Lemon Iced Tea', 13, '3.00', 'imgs/Thai-Lemon-Iced-Tea.jpg', 'Made from strongly-brewed black tea, often spiced with ingredients such as star anise, crushed tamarind, cardamom, and occasionally others as well (often making this beverage a favorite among masala chai tea fans). This brew is then sweetened with sugar a'),
+(41, 'Panini', 14, '6.50', 'imgs/panini.jpg', 'A sandwich made with Italian bread (such as ciabatta, and michetta), usually served warmed by grilling or toasting.'),
+(42, 'Egg and Cheese Sandwich', 14, '4.50', 'imgs/eggcheese.jpg', 'Bacon, egg, and cheese crescent roll-ups are cheesy, warm and fluffy for breakfast.'),
+(44, 'Strawberry Waffles', 14, '3.50', 'imgs/d.jpg', 'These strawberry waffles are light and crispy homemade waffles smothered in a fresh strawberry sauce then topped with whipped cream. An easy yet decadent breakfast or brunch option!'),
+(45, 'Apricot Porridge', 16, '3.00', 'imgs/apricot-and-raspberry-porridge.jpg', 'A beautifully creamy porridge with added spice to warm up your morning.'),
+(46, 'Chocolate Muffin', 17, '3.00', 'imgs/muffin1.jpg', 'One word: scrumptious! Very moist, tasty and full of chocolate goodness! '),
+(47, 'Banana Muffin', 17, '3.00', 'imgs/muffin2.jpg', 'An incredibly soft, moist banana muffin made with tall bakery-style muffin tops, sweet banana flavor, and a simple (optional) streusel crumb topping!  '),
+(48, 'Croissant', 17, '2.50', 'imgs/croissant.jpg', 'Croissants and other viennoiserie are made of a layered yeast-leavened dough. The dough is layered with butter, rolled and folded several times in succession, then rolled into a sheet, in a technique called laminating. '),
+(50, 'Hard Boiled Eggs', 16, '0.60', 'imgs/Boiled-eggs.jpg', 'Boiled eggs are eggs, typically from a chicken, cooked with their shells unbroken, usually by immersion in boiling water. Hard-boiled eggs are cooked so that the egg white and egg yolk both solidify, while soft-boiled eggs may leave the yolk, and sometime'),
+(51, 'Red Apple', 15, '0.50', 'imgs/Redapple.jpg', 'Red Delicious apples are bright to deep red in color, oftentimes speckled with faint white lenticels (spots). Its creamy white flesh is slightly crisp and dense offering a mildly sweet flavor and slightly flora aroma.'),
+(53, 'Orange', 15, '0.60', 'imgs/orange.jpg', 'Orange (fruit) An orange is a type of citrus fruit that people often eat or they can sniff the skin when grinded into a smooth powder. Oranges are a very good source of vitamins, especially vitamin C. Orange juice is an important part of many people\'s bre'),
+(54, 'Banana', 15, '0.50', 'imgs/banana.jpg', 'A banana is an edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa. In some countries, bananas used for cooking may be called \"plantains\", distinguishing them from dessert bananas.'),
+(58, 'Matcha Iced Latte', 13, '4.00', 'imgs/matchaicelatte.jpg', 'Matcha gives you an energy boost without the crash you often experience after a strong cup of coffee. The matcha latte is a surprisingly perfect marriage of tea and creamy milk; when lightly sweetened, it is truly a treat.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `status`
+--
+
+CREATE TABLE `status` (
+  `id` int(11) NOT NULL,
+  `orderid` int(11) NOT NULL,
+  `status` varchar(255) COLLATE latin1_bin NOT NULL,
+  `message` text COLLATE latin1_bin NOT NULL,
+  `datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
+
+--
+-- Dumping data for table `status`
+--
+
+INSERT INTO `status` (`id`, `orderid`, `status`, `message`, `datetime`) VALUES
+(1, 4, 'In Progress', ' ', '2019-02-13 01:08:35'),
+(2, 4, 'Dispatched', ' ', '2019-02-13 01:08:58'),
+(3, 6, 'Cancelled', ' ', '2019-02-13 02:35:18'),
+(4, 1, 'Cancelled', ' ', '2019-02-13 02:35:56'),
+(5, 7, 'Cancelled', ' ', '2019-02-13 02:53:37'),
+(6, 11, 'Cancelled', ' ', '2019-02-13 03:24:53'),
+(7, 16, 'Cancelled', ' ', '2019-02-13 03:55:32'),
+(8, 18, 'In Progress', ' ', '2019-02-13 04:01:16'),
+(9, 18, 'In Progress', ' ', '2019-02-13 04:02:09'),
+(10, 18, 'In Progress', ' ', '2019-02-13 04:02:21'),
+(11, 18, 'Dispatched', ' ', '2019-02-13 04:02:27'),
+(12, 17, 'Dispatched', ' ', '2019-02-13 04:02:36'),
+(13, 18, 'Delivered', ' ', '2019-02-13 04:03:30'),
+(14, 18, 'In Progress', ' ', '2019-02-13 04:04:42'),
+(15, 15, 'Dispatched', ' ', '2019-02-13 04:04:54'),
+(16, 22, 'Cancelled', ' ', '2019-02-13 04:38:23'),
+(17, 27, 'In Progress', ' ', '2019-02-19 01:26:59'),
+(18, 28, 'In Progress', ' ', '2019-02-19 01:28:24'),
+(19, 28, 'Dispatched', ' ', '2019-02-19 01:28:46'),
+(20, 30, 'Cancelled', ' ', '2019-02-19 02:54:14'),
+(21, 39, 'Cancelled', ' Did not want product', '2019-02-19 06:24:26'),
+(22, 40, 'Cancelled', '', '2019-02-19 06:26:21'),
+(23, 38, 'Cancelled', '', '2019-02-19 06:26:39'),
+(24, 41, 'Preparing', ' ', '2019-02-19 08:11:10'),
+(25, 40, 'Almost Done', ' ', '2019-02-19 08:11:50'),
+(26, 44, 'Cancelled', '', '2019-02-19 18:05:44'),
+(27, 42, 'Cancelled', '', '2019-02-19 18:19:22'),
+(28, 45, 'Preparing', ' ', '2019-02-19 18:22:34'),
+(29, 47, 'Cancelled', '', '2019-02-19 19:22:43'),
+(30, 48, 'Preparing', ' ', '2019-02-19 19:25:45'),
+(31, 48, 'Almost Done', ' ', '2019-02-19 19:26:25'),
+(32, 48, 'Done', ' ', '2019-02-19 19:27:12'),
+(33, 57, 'Preparing', ' ', '2019-02-19 21:30:19'),
+(34, 58, 'Cancelled', '', '2019-02-20 00:15:52'),
+(35, 60, 'Cancelled', '', '2019-02-20 03:41:24'),
+(36, 61, 'Done', ' ', '2019-02-20 03:43:24'),
+(37, 65, 'Preparing', ' ', '2019-02-20 06:59:58'),
+(38, 64, 'Almost Done', ' ', '2019-02-20 07:00:06'),
+(39, 64, 'Done', ' ', '2019-02-20 07:00:14'),
+(40, 65, 'Ready-to-Go', ' ', '2019-02-20 07:19:35'),
+(41, 55, 'Done', ' ', '2019-02-20 07:23:33'),
+(42, 59, 'Almost Done', ' ', '2019-02-20 07:23:41'),
+(43, 51, 'Done', ' ', '2019-02-20 07:23:49'),
+(44, 52, 'Done', ' ', '2019-02-20 07:23:58'),
+(45, 53, 'Done', ' ', '2019-02-20 07:24:02'),
+(46, 54, 'Done', ' ', '2019-02-20 07:24:07'),
+(47, 56, 'Ready-to-Go', ' ', '2019-02-20 07:24:13'),
+(48, 57, 'Ready-to-Go', ' ', '2019-02-20 07:24:18'),
+(49, 58, 'Done', ' ', '2019-02-20 07:24:23'),
+(50, 59, 'Ready-to-Go', ' ', '2019-02-20 07:24:27'),
+(51, 62, 'Ready-to-Go', ' ', '2019-02-20 07:24:44'),
+(52, 63, 'Ready-to-Go', ' ', '2019-02-20 07:24:51'),
+(53, 70, 'Preparing', ' ', '2019-02-21 21:44:12'),
+(54, 71, 'Done', ' ', '2019-02-21 23:47:18'),
+(55, 72, 'Done', ' ', '2019-02-21 23:47:24'),
+(56, 73, 'Done', ' ', '2019-02-21 23:47:30'),
+(57, 74, 'Done', ' ', '2019-02-21 23:47:34'),
+(58, 75, 'In Progress', ' ', '2019-02-21 23:47:41'),
+(59, 76, 'Cancelled', '', '2019-02-21 23:48:30'),
+(60, 84, 'In Progress', ' ', '2019-02-27 02:00:39'),
+(61, 83, 'In Progress', ' ', '2019-02-27 02:00:52'),
+(62, 85, 'Preparing', ' ', '2019-02-27 02:01:03'),
+(63, 86, 'Cancelled', '', '2019-02-27 02:01:51'),
+(64, 87, 'Cancelled', '', '2019-02-27 02:02:24'),
+(65, 88, 'Cancelled', '', '2019-02-27 02:02:58'),
+(66, 89, 'Cancelled', '', '2019-02-27 02:03:26'),
+(67, 90, 'In Progress', ' ', '2019-02-28 13:32:59');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `supplier`
+--
+
+CREATE TABLE `supplier` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) COLLATE latin1_bin NOT NULL,
+  `street` varchar(255) COLLATE latin1_bin NOT NULL,
+  `city` varchar(255) COLLATE latin1_bin NOT NULL,
+  `state` varchar(255) COLLATE latin1_bin NOT NULL,
+  `zip` int(11) NOT NULL,
+  `mobile` varchar(25) COLLATE latin1_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
+
+--
+-- Dumping data for table `supplier`
+--
+
+INSERT INTO `supplier` (`id`, `name`, `street`, `city`, `state`, `zip`, `mobile`) VALUES
+(1, 'Elevated Coffee and Vending', '675 W High St', 'Orrville', 'OH', 44667, '3307656289'),
+(2, 'Sunshine Coffee', '1301 Harrison St', 'San Francisco', 'CA', 94103, '4158665397'),
+(3, 'Snap Coffee', '208 Broadway E', 'Seattle', 'WA', 98102, '2067371088'),
+(4, 'Pulse Coffee Vending', '901 Harrison St', 'Oakland', 'CA', 94607, '4154803574'),
+(5, 'Sunbelt Coffee Supplier', '31 W Puainako St', 'Hilo', 'HI', 96720, '8089879975'),
+(6, 'Fortune Coffee Vending', '3050 Barranca Pkwy', 'Irvine', 'CA', 92606, '9494352050'),
+(7, 'BigBlue Coffee Enterprises', '480 Furnace Brook Pkwy', 'Quincy', 'MA', 2169, '6176554222'),
+(8, 'GreenStar Coffee', '3043 W 11th Ave', 'Eugene', 'OR', 97402, '5416669892'),
+(9, 'RiverValley Coffee Vending', '222 Vine St', 'Philadelphia', 'PA', 19107, '4843841116'),
+(10, 'Ventura Coffee Supplier', '233 E Campus Way', 'Ventura', 'CA', 93003, '8058505532');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `supplies`
+--
+
+CREATE TABLE `supplies` (
+  `sid` int(11) NOT NULL,
+  `pid` int(11) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `datetime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
+
+--
+-- Dumping data for table `supplies`
+--
+
+INSERT INTO `supplies` (`sid`, `pid`, `qty`, `datetime`) VALUES
+(1, 1, 3, '2019-02-11 16:20:52'),
+(1, 2, 4, '2019-02-11 16:19:48'),
+(1, 3, 2, '2019-02-11 16:20:24'),
+(2, 3, 2, '2019-02-19 05:19:37'),
+(2, 18, 5, '2019-02-19 06:35:03'),
+(3, 5, 0, '2019-02-20 01:59:44'),
+(3, 21, 3, '2019-02-19 06:40:23'),
+(3, 47, 5, '2019-02-20 02:03:17'),
+(4, 3, 2, '2019-02-11 22:24:33'),
+(4, 6, 2, '2019-02-19 21:31:43'),
+(4, 35, 4, '2019-02-20 02:23:27'),
+(5, 3, 1, '2019-02-19 05:20:18'),
+(5, 6, 3, '2019-02-20 02:00:01'),
+(5, 20, 2, '2019-02-19 08:01:45'),
+(6, 26, 3, '2019-02-19 08:23:34'),
+(7, 47, 4, '2019-02-20 02:03:57'),
+(9, 29, 10, '2019-02-20 02:05:36'),
+(9, 48, 3, '2019-02-20 02:11:40'),
+(10, 19, 5, '2019-02-19 08:23:09'),
+(14, 47, 6, '2019-02-19 06:42:47');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- Indexes for table `customerinfo`
+--
+ALTER TABLE `customerinfo`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `employee`
+--
+ALTER TABLE `employee`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `emp_role`
+--
+ALTER TABLE `emp_role`
+  ADD PRIMARY KEY (`id`);
+
+--
+--
+-- Indexes for table `contains`
+--
+ALTER TABLE `contains`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `status`
+--
+ALTER TABLE `status`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `supplier`
+--
+ALTER TABLE `supplier`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `supplies`
+--
+ALTER TABLE `supplies`
+  ADD PRIMARY KEY (`sid`,`pid`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `customerinfo`
+--
+ALTER TABLE `customerinfo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT for table `employee`
+--
+ALTER TABLE `employee`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `emp_role`
+--
+ALTER TABLE `emp_role`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `materials`
+--
+ALTER TABLE `materials`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `orderitems`
+--
+ALTER TABLE `orderitems`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+
+--
+-- AUTO_INCREMENT for table `status`
+--
+ALTER TABLE `status`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+
+--
+-- AUTO_INCREMENT for table `supplier`
+--
+ALTER TABLE `supplier`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
